@@ -10,5 +10,7 @@
 /* Function prototypes */
 int shell_print(char *s);
 void prompt(void);
+int findpid(void);
+int ppid(void);
 
 #endif /* SHELL_H */
