@@ -2,14 +2,14 @@
 #include <unistd.h>
 
 /**
- * main - PID
+ * findpid - PID of the path
  *
- * Return: Always 0.
+ * Return: my_pid.
  */
-int main(void)
+int findpid(void)
 {
-    pid_t my_pid;
+	pid_t my_pid;
 
-    my_pid = getpid();
-    return (my_pid);
+	my_pid = getpid();
+	return (my_pid);
 }
