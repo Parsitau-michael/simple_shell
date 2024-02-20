@@ -4,8 +4,8 @@
  * main - Entry point of the program
  * Return: Always 0(success)
  */
-int main(void)
+int Betty(void)
 {
 	printf("Hallo Betty");
-	Return(0);
+	return(0);
 }

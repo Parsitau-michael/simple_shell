@@ -16,6 +16,7 @@ int shell_print(char *s);
 void prompt(void);
 char *user_inputs(void);
 char **tokenizer(char *s);
+int Betty(void);
 int exec(char **args);
 /* int exec(char **args);*/
 
