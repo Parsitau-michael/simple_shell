@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include "shell.h"
-#include <unistd.h>
-
 /**
  * findpid - PID of the path
  *
