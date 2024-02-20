@@ -7,4 +7,5 @@
 int main(void)
 {
 	printf("Hallo Betty");
+	Return(0);
 }
