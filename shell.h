@@ -13,6 +13,7 @@
 
 /* Function prototypes */
 int shell_print(char *s);
+int pass_betty(void);
 void prompt(void);
 char *user_inputs(void);
 char **tokenizer(char *s);
