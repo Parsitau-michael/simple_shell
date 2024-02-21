@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * tokenizer - a function that tokenizes a string.
+ * tokenize - a function that tokenizes a string.
  *
  * @s: the string to be tokenized.
  * Return: an array of pointers to the tokens.
  */
-char **tokenizer(char *s)
+char **tokenize(char *s, char *delim)
 {
 	char **tokens = malloc(sizeof(char *) * MAX_T);
 	char *token = NULL;
@@ -18,11 +18,11 @@ char **tokenizer(char *s)
 		exit(EXIT_FAILURE);
 	}
 
-	token = strtok(s, " \t\n");
+	token = strtok(s, delim);
 	while (token && i < MAX_T)
 	{
 		tokens[i] = token;
-		token = strtok(NULL, " \t\n");
+		token = strtok(NULL, delim);
 		i++;
 	}
 
