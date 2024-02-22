@@ -10,8 +10,6 @@ int main(void)
 	char *usr_inp = NULL;
 	char **token;
 
-	pass_betty();
-
 	while (1)
 	{
 		/* printing the prompt */
