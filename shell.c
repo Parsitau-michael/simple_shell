@@ -7,26 +7,29 @@
  */
 int main(void)
 {
-	char *usr_inp = NULL;
+	char *input = NULL;
+	size_t n = 0;
 	char **token;
 
-	while (1)
+	/* printing the prompt */
+	prompt();
+
+	while (getline(&input, &n, stdin) != EOF)
 	{
+		/* Tokenization of user inputs */
+		token = tokenize(input, " \n");
+
+		/* Tokenization of the path var */
+
+
+		/* forking a process and executing a program */
+		execute(token);
+
 		/* printing the prompt */
 		prompt();
 
-		/* fetch user input */
-		usr_inp = user_inputs();
-
-		token = malloc(sizeof(char *) * 20);
-		if (token == NULL)
-			perror("failed to allocate memory");
-
-		/* Tokenization of user inputs */
-		token = tokenize(usr_inp, " \n");
-
-		/* forking a process and executing a program */
-		exec(token);
 	}
+
+	free(input);
 	return (0);
 }

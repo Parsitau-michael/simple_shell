@@ -11,10 +11,11 @@ char *user_inputs(void)
 	size_t n = 0;
 
 	/* fetch user input */
-	if (getline(&input, &n, stdin) == -1)
+	if (getline(&input, &n, stdin) == EOF)
 	{
 		perror("Error fetching user input");
-		/* exit(); */
+		exit(EXIT_FAILURE);
+		free(input);
 	}
 
 	return (input);

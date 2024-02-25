@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * exec - a function that executes a program.
+ * execute - a function that executes a program.
  *
  * @args: an array of pointers
  * Return:0 on success, -1 on failure.
  */
-int exec(char **args)
+int execute(char **args)
 {
 	/* creating a process */
 	pid_t pid = fork();

@@ -17,8 +17,7 @@ int pass_betty(void);
 void prompt(void);
 char *user_inputs(void);
 char **tokenize(char *s, char *delim);
-int exec(char **args);
-/* int exec(char **args);*/
+int execute(char **args);
 
 
 #endif /* SHELL_H */
