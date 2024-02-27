@@ -1,7 +1,7 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#define MAX_T 20
+extern char **environ;
 
 /* All required header files */
 #include <stdio.h>
@@ -16,8 +16,11 @@ int shell_print(char *s);
 int pass_betty(void);
 void prompt(void);
 char *user_inputs(void);
+size_t word_len(char *str, char *delim);
 char **tokenize(char *s, char *delim);
 int execute(char **args);
+void print_env(void);
+void free_array(char **array);
 
 
 #endif /* SHELL_H */

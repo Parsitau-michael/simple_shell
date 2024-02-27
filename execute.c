@@ -8,6 +8,8 @@
  */
 int execute(char **args)
 {
+	int status;
+
 	/* creating a process */
 	pid_t pid = fork();
 
@@ -21,7 +23,7 @@ int execute(char **args)
 	if (pid == 0)
 	{
 		/* execute a program here */
-		if (execve(args[0], args, NULL) == -1)
+		if (execve(args[0], args, environ) == -1)
 		{
 			perror("Error executing");
 		}
@@ -30,7 +32,7 @@ int execute(char **args)
 	else
 	{
 		/* we are in the parent process */
-		wait(NULL);
+		wait(&status);
 	}
 	return (0);
 }

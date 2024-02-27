@@ -8,14 +8,23 @@
 int main(void)
 {
 	char *input = NULL;
-	size_t n = 0;
 	char **token;
 
-	/* printing the prompt */
-	prompt();
-
-	while (getline(&input, &n, stdin) != EOF)
+	while (1)
 	{
+		/* printing the prompt */
+		prompt();
+
+		/* fetching user inputs */
+		input = user_inputs();
+
+		/* check for exit */
+		if (strcmp(input, "exit\n") == 0)
+		{
+			free(input);
+			break;
+		}
+		
 		/* Tokenization of user inputs */
 		token = tokenize(input, " \n");
 
@@ -23,13 +32,21 @@ int main(void)
 
 
 		/* forking a process and executing a program */
-		execute(token);
+		if (token[0] != NULL)
+		{
+			if (strcmp(token[0], "env") == 0)
+			{
+				print_env();
+			}
+			else
+			{
+				execute(token);
+			}
+		}
 
-		/* printing the prompt */
-		prompt();
+		free_array(token);
+		free(input);
 
 	}
-
-	free(input);
 	return (0);
 }
