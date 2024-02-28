@@ -8,4 +8,3 @@ void exiting(void)
 	printf("Exiting the shell");
 		exit(0);
 }
-
