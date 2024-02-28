@@ -20,7 +20,9 @@ int shell_print(char *s)
 		len++;
 	}
 
-	if ((written = write(1, s, len)) == -1)
+	written = write(1, s, len);
+
+	if (written == -1)
 	{
 		perror("");
 		exit(EXIT_FAILURE);
