@@ -1,13 +1,15 @@
 #include "shell.h"
 
 /**
- * exec - a function that executes a program.
+ * execute - a function that executes a program.
  *
  * @args: an array of pointers
  * Return:0 on success, -1 on failure.
  */
-int exec(char **args)
+int execute(char **args)
 {
+	int status;
+
 	/* creating a process */
 	pid_t pid = fork();
 
@@ -21,7 +23,7 @@ int exec(char **args)
 	if (pid == 0)
 	{
 		/* execute a program here */
-		if (execve(args[0], args, NULL) == -1)
+		if (execve(args[0], args, environ) == -1)
 		{
 			perror("Error executing");
 		}
@@ -30,7 +32,7 @@ int exec(char **args)
 	else
 	{
 		/* we are in the parent process */
-		wait(NULL);
+		wait(&status);
 	}
 	return (0);
 }

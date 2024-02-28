@@ -7,28 +7,46 @@
  */
 int main(void)
 {
-	char *usr_inp = NULL;
+	char *input = NULL;
 	char **token;
-
-	pass_betty();
 
 	while (1)
 	{
 		/* printing the prompt */
 		prompt();
 
-		/* fetch user input */
-		usr_inp = user_inputs();
+		/* fetching user inputs */
+		input = user_inputs();
 
-		token = malloc(sizeof(char *) * 20);
-		if (token == NULL)
-			perror("failed to allocate memory");
-
+		/* check for exit */
+		if (strcmp(input, "exit\n") == 0)
+		{
+			free(input);
+			break;
+		}
+		
 		/* Tokenization of user inputs */
-		token = tokenize(usr_inp, " \n");
+		token = tokenize(input, " \n");
+
+		/* Tokenization of the path var */
+
 
 		/* forking a process and executing a program */
-		exec(token);
+		if (token[0] != NULL)
+		{
+			if (strcmp(token[0], "env") == 0)
+			{
+				print_env();
+			}
+			else
+			{
+				execute(token);
+			}
+		}
+
+		free_array(token);
+		free(input);
+
 	}
 	return (0);
 }

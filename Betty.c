@@ -6,6 +6,6 @@
  */
 int Betty(void)
 {
-	printf("Hallo Betty");
+	printf ("Hallo Betty");
 	return(0);
 }

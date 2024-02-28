@@ -10,12 +10,13 @@ char *user_inputs(void)
 	char *input = NULL;
 	size_t n = 0;
 
-	/* fetch user input */
-	if (getline(&input, &n, stdin) == -1)
-	{
-		perror("Error fetching user input");
-		/* exit(); */
-	}
+	ssize_t read = getline(&input, &n, stdin);
+	
+	if (read == -1)
+        {
+                free(input);
+                exit(EXIT_FAILURE);
+        }
 
 	return (input);
 }

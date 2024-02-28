@@ -8,5 +8,5 @@
 int pass_betty(void)
 {
 	shell_print("Hello World! We passed Betty Checks\n");
-	return(0);
+	return (0);
 }
