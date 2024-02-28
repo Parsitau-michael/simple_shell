@@ -11,12 +11,16 @@ int main(void)
 
 	while (1)
 	{
-		/* printing the prompt */
 		prompt();
-		/* fetching user inputs */
 		input = user_inputs();
+
+		if (input == NULL)
+		{
+			shell_print("\n");
+			break;
+		}
 		/* check for exit */
-		if (strcmp(input, "exit\n") == 0)
+		if (strcmp(input, "exit") == 0)
 		{
 			free(input);
 			break;
