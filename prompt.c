@@ -7,5 +7,5 @@
 void prompt(void)
 {
 	/* print a prompt to the user */
-	shell_print("#cisfun$ ");
+	shell_print("$ ");
 }

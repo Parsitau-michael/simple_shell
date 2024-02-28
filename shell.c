@@ -9,6 +9,7 @@ int main(void)
 	char *input = NULL;
 	char **token;
 
+	signal(SIGTERM, sigterm_handler);
 	while (1)
 	{
 		prompt();
@@ -20,7 +21,7 @@ int main(void)
 			break;
 		}
 		/* check for exit */
-		if (strcmp(input, "exit") == 0)
+		if (_strcmp(input, "exit") == 0)
 		{
 			free(input);
 			break;
@@ -31,7 +32,7 @@ int main(void)
 		/* forking a process and executing a program */
 		if (token[0] != NULL)
 		{
-			if (strcmp(token[0], "env") == 0)
+			if (_strcmp(token[0], "env") == 0)
 			{
 				print_env();
 			}

@@ -29,7 +29,7 @@ char **tokenize(char *str, char *delim)
 {
 	char **tokens = NULL;
 	size_t num_tokens = 0;
-	size_t str_len = strlen(str);
+	size_t str_len = _strlen(str);
 	size_t i = 0; /* for array */
 	size_t j = 0; /* for string */
 	char prev = '\0';
