@@ -10,6 +10,7 @@ int main(void)
 	char *usr_inp = NULL;
 	char **token;
 
+	pass_betty();
 
 	while (1)
 	{
@@ -20,9 +21,11 @@ int main(void)
 		usr_inp = user_inputs();
 
 		token = malloc(sizeof(char *) * 20);
+		if (token == NULL)
+			perror("failed to allocate memory");
 
 		/* Tokenization of user inputs */
-		token = tokenizer(usr_inp);
+		token = tokenize(usr_inp, " \n");
 
 		/* forking a process and executing a program */
 		exec(token);
