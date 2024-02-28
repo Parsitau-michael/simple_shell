@@ -17,7 +17,7 @@ int pass_betty(void);
 void prompt(void);
 char *user_inputs(void);
 size_t word_len(char *str, char *delim);
-char **tokenize(char *s, char *delim);
+char **tokenize(char *str, char *delim);
 int execute(char **args);
 void print_env(void);
 void free_array(char **array);
