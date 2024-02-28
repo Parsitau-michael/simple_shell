@@ -20,6 +20,7 @@ char **tokenizer(char *s);
 int Betty(void);
 char **tokenize(char *s, char *delim);
 int exec(char **args);
+void exiting(void);
 /* int exec(char **args);*/
 size_t word_len(char *str, char *delim);
 char **tokenize(char *s, char *delim);
