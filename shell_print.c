@@ -10,6 +10,7 @@
 int shell_print(char *s)
 {
 	size_t len = 0;
+	int written;
 
 	if (s == NULL)
 		return (-1);
@@ -18,5 +19,13 @@ int shell_print(char *s)
 	{
 		len++;
 	}
-	return (write(1, s, len));
+
+	written = write(1, s, len);
+
+	if (written == -1)
+	{
+		perror("");
+		exit(EXIT_FAILURE);
+	}
+	return (written);
 }

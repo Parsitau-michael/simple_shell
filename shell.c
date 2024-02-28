@@ -2,7 +2,6 @@
 
 /**
  * main - Entry point.
- *
  * Return: 0 on success, -1 on failure.
  */
 int main(void)
@@ -10,31 +9,30 @@ int main(void)
 	char *input = NULL;
 	char **token;
 
+	signal(SIGTERM, sigterm_handler);
 	while (1)
 	{
-		/* printing the prompt */
 		prompt();
-
-		/* fetching user inputs */
 		input = user_inputs();
 
+		if (input == NULL)
+		{
+			shell_print("\n");
+			break;
+		}
 		/* check for exit */
-		if (strcmp(input, "exit\n") == 0)
+		if (_strcmp(input, "exit") == 0)
 		{
 			free(input);
 			break;
 		}
-		
 		/* Tokenization of user inputs */
 		token = tokenize(input, " \n");
-
 		/* Tokenization of the path var */
-
-
 		/* forking a process and executing a program */
 		if (token[0] != NULL)
 		{
-			if (strcmp(token[0], "env") == 0)
+			if (_strcmp(token[0], "env") == 0)
 			{
 				print_env();
 			}
@@ -43,10 +41,8 @@ int main(void)
 				execute(token);
 			}
 		}
-
 		free_array(token);
 		free(input);
-
 	}
 	return (0);
 }

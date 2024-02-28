@@ -25,7 +25,8 @@ int execute(char **args)
 		/* execute a program here */
 		if (execve(args[0], args, environ) == -1)
 		{
-			perror("Error executing");
+			perror(args[0]);
+			exit(EXIT_FAILURE);
 		}
 
 	}
