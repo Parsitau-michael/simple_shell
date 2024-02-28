@@ -1,6 +1,7 @@
 #include "shell.h"
 
-/* print_env - a function that prints the environment variables.
+/**
+ * print_env - a function that prints the environment variables.
  */
 void print_env(void)
 {

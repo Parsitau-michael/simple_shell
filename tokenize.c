@@ -21,7 +21,8 @@ size_t word_len(char *str, char *delim)
 /**
  * tokenize - a function that tokenizes a string.
  *
- * @s: the string to be tokenized.
+ * @str: the string to be tokenized.
+ * @delim: the delimiting characters.
  * Return: an array of pointers to the tokens.
  */
 char **tokenize(char *str, char *delim)
@@ -71,11 +72,11 @@ void free_array(char **array)
 
 	while (array[count])
 		count++;
-	
+
 	for (i = 0; i < count; i++)
 	{
 		free(array[count]);
 	}
-	
+
 	free(array);
 }
