@@ -8,4 +8,5 @@ void prompt(void)
 {
 	/* print a prompt to the user */
 	shell_print("$ ");
+	fflush(stdout);
 }
