@@ -25,9 +25,5 @@ int execute(char **args);
 void print_env(void);
 void free_array(char **array);
 void sigterm_handler(int signum);
-int shell_env(char **args, char __attribute__((__unused__)) **frog);
-int shell_setingenv(char **args, char __attribute__((unused__)) ** frog);
-int shell_unsettingenv(char **args, char __attribute__((__unused__)) ** frog);
-
 
 #endif /* SHELL_H */
