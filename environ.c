@@ -9,9 +9,7 @@ void print_env(void)
 
 	for (; *env != NULL; env++)
 	{
-		/*
-		 * shell_print(*env);
-		 * shell_print("\n");
-		 */
+		shell_print(*env);
+		shell_print("\n");
 	}
 }
