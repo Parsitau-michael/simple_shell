@@ -12,7 +12,9 @@ int main(void)
 	signal(SIGTERM, sigterm_handler);
 	while (1)
 	{
-		prompt();
+		if (isatty(0))
+			prompt();
+
 		input = user_inputs();
 
 		/* check for exit */
