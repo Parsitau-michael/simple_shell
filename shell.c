@@ -17,7 +17,6 @@ int main(void)
 
 		if (input == NULL)
 		{
-			shell_print("\n");
 			break;
 		}
 		/* check for exit */
@@ -27,7 +26,7 @@ int main(void)
 			break;
 		}
 		/* Tokenization of user inputs */
-		token = tokenize(input, " \n");
+		token = tokenize(input, " \t\n");
 		/* Tokenization of the path var */
 		/* forking a process and executing a program */
 		if (token[0] != NULL)

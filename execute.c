@@ -8,8 +8,6 @@
  */
 int execute(char **args)
 {
-	int status;
-
 	/* creating a process */
 	pid_t pid = fork();
 
@@ -33,7 +31,7 @@ int execute(char **args)
 	else
 	{
 		/* we are in the parent process */
-		wait(&status);
+		wait(NULL);
 	}
 	return (0);
 }
