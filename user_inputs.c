@@ -18,8 +18,5 @@ char *user_inputs(void)
 		exit(EXIT_FAILURE);
 	}
 
-	/* removing the next line character */
-	input[strcspn(input, "\n")] = '\0';
-
 	return (input);
 }
