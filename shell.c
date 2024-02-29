@@ -14,12 +14,7 @@ int main(void)
 	{
 		prompt();
 		input = user_inputs();
-		/* removing the next line character */
-		input[strcspn(input, "\n")] = '\0';
-		if (input == NULL)
-		{
-			break;
-		}
+
 		/* check for exit */
 		if (_strcmp(input, "exit") == 0)
 		{

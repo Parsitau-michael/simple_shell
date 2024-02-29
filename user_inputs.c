@@ -18,5 +18,16 @@ char *user_inputs(void)
 		exit(EXIT_FAILURE);
 	}
 
+	/* removing the new line character */
+	if (read > 0 && input[read - 1] == '\n')
+		input[read - 1] = '\0';
+
+	/* handling empty lines */
+	if (read == 1)
+	{
+		free(input);
+		return (NULL);
+	}
+
 	return (input);
 }
