@@ -26,7 +26,7 @@ char *user_inputs(void)
 	if (read == 1)
 	{
 		free(input);
-		return (NULL);
+		exit(EXIT_FAILURE);
 	}
 
 	return (input);

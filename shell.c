@@ -22,7 +22,7 @@ int main(void)
 			break;
 		}
 		/* Tokenization of user inputs */
-		token = tokenize(input, " \t\n");
+		token = tokenize(input, " ");
 		/* Tokenization of the path var */
 		/* forking a process and executing a program */
 		if (token[0] != NULL)

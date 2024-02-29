@@ -7,6 +7,6 @@
 void prompt(void)
 {
 	/* print a prompt to the user */
-	shell_print("$ ");
+	write(1, "$ ", 2);
 	fflush(stdout);
 }
